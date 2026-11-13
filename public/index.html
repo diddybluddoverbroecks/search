@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Google</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<main id="google-view" class="google-view">
+  <div class="google-inner">
+    <div class="google-logo" aria-label="Google">
+      <span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span>
+    </div>
+
+    <form id="search-form" class="search-form" autocomplete="off">
+      <div class="search-bar">
+        <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/>
+        </svg>
+        <input
+          id="search-input"
+          type="text"
+          name="q"
+          placeholder="Search Google or type a URL"
+          spellcheck="false"
+          autofocus
+        />
+      </div>
+    </form>
+
+    <div class="google-buttons">
+      <button type="button" class="gbtn" onclick="document.getElementById('search-form').requestSubmit()">Google Search</button>
+    </div>
+  </div>
+</main>
+
+<section id="chat-view" class="chat-view hidden" aria-hidden="true">
+
+  <div id="name-modal" class="modal-backdrop">
+    <div class="modal">
+      <h2 class="modal-title">Your name</h2>
+      <p class="modal-sub">This is what others will see.</p>
+      <input id="name-input" class="modal-input" type="text" maxlength="24" placeholder="e.g. Alex" />
+      <button id="name-submit" class="primary-btn" type="button">Continue</button>
+    </div>
+  </div>
+
+  <div id="chat-app" class="chat-app hidden">
+    <header class="chat-header">
+      <div class="chat-title">
+        <span class="chat-dot"></span>
+        <span>Messages</span>
+      </div>
+      <div class="chat-sub" id="chat-sub">connected</div>
+    </header>
+
+    <div id="messages" class="messages" role="log" aria-live="polite"></div>
+
+    <form id="composer" class="composer" autocomplete="off">
+      <button type="button" id="image-btn" class="icon-btn" title="Send image URL">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path fill="currentColor" d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM8.5 13.5l2.5 3 3.5-4.5 4.5 6H5l3.5-4.5z"/>
+        </svg>
+      </button>
+      <input id="message-input" class="composer-input" type="text" placeholder="iMessage" maxlength="2000" />
+      <button id="send-btn" class="send-btn" type="submit" title="Send">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path fill="currentColor" d="M3.4 20.4l17.45-7.48a1 1 0 0 0 0-1.84L3.4 3.6a.993.993 0 0 0-1.39.91L2 9.12c0 .5.37.93.87.99L17 12 2.87 13.88c-.5.07-.87.5-.87 1l.01 4.61c0 .71.73 1.2 1.39.91z"/>
+        </svg>
+      </button>
+    </form>
+  </div>
+</section>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

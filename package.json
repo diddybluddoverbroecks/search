@@ -1,0 +1,17 @@
+{
+  "name": "messagetime",
+  "version": "1.0.0",
+  "description": "A discreet chat hidden behind a Google-like search page",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "obscenity": "^0.4.1",
+    "socket.io": "^4.7.5"
+  }
+}
